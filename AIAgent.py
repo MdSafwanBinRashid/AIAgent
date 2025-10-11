@@ -7,7 +7,7 @@ from dotenv import load_dotenv  # environment variables are kept, such as GOOGLE
 import os
 
 load_dotenv()  # load environment variables
-os.environ["GOOGLE_API_KEY"] = "AIzaSyAAaYAWZJqIoj0j6z8UO1hoH9vd2kMeU3c" # what the SDK actually reads
+os.environ["GOOGLE_API_KEY"] = ""GOOGLE_API_KEY"" # what the SDK actually reads # put your GOOGLE_API_KEY here
 
 # Tools
 @tool
