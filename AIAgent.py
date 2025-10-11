@@ -9,7 +9,6 @@ import os
 load_dotenv()  # load environment variables
 os.environ["GOOGLE_API_KEY"] = ""GOOGLE_API_KEY"" # what the SDK actually reads # put your GOOGLE_API_KEY here
 
-# Tools
 @tool
 def calculator(a: float, b: float) -> str:
     """Useful for performing basic arithmetic calculations with numbers"""
