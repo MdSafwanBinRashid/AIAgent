@@ -10,10 +10,24 @@ load_dotenv()  # load environment variables
 os.environ["GOOGLE_API_KEY"] = ""GOOGLE_API_KEY"" # what the SDK actually reads # put your GOOGLE_API_KEY here
 
 @tool
-def calculator(a: float, b: float) -> str:
-    """Useful for performing basic arithmetic calculations with numbers"""
-    print("Tool has been called.")
+def add(a: float, b: float) -> str:
+    """Useful for adding two numbers"""
     return f"The sum of {a} and {b} is {a + b}"
+
+@tool
+def multiply(a: float, b: float) -> str:
+    """Useful for multiplying two numbers together"""
+    return f"The product of {a} and {b} is {a * b}"
+
+@tool
+def minus(a: float, b: float) -> str:
+    """Useful for subtracting two numbers"""
+    return f"The difference between {a} and {b} is {a - b}"
+
+@tool
+def divide(a: float, b: float) -> str:
+    """Useful for dividing two numbers"""
+    return f"The quotient of {a} divided by {b} is {a / b}"
 
 @tool
 def say_hello(name: str) -> str:
@@ -43,7 +57,7 @@ def get_model():
 
 def main():  # chatbot and ai agent
     model = get_model()
-    tools = [calculator, say_hello]
+    tools = [add, say_hello, multiply, minus, divide]
     agent_executor = create_react_agent(model, tools)
 
     print("\nWelcome! I'm your AI assistant. Type 'quit' to exit.")
